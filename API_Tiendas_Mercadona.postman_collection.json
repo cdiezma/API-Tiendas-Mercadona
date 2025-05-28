@@ -1,0 +1,1623 @@
+{
+	"info": {
+		"_postman_id": "73a31361-7680-49e7-af3c-c0ba25f4056c",
+		"name": "API Tiendas Mercadona",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12168828"
+	},
+	"item": [
+		{
+			"name": "trabajadores",
+			"item": [
+				{
+					"name": "{idTrabajador}",
+					"item": [
+						{
+							"name": "Actualizar trabajador",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trabajadores",
+										":idTrabajador"
+									],
+									"variable": [
+										{
+											"key": "idTrabajador",
+											"value": "<long>",
+											"description": "(Required) ID del trabajador a actualizar"
+										}
+									]
+								},
+								"description": "Actualiza la información de un trabajador existente."
+							},
+							"response": [
+								{
+									"name": "Trabajador actualizado correctamente",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":idTrabajador"
+											],
+											"variable": [
+												{
+													"key": "idTrabajador"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"horasTotales\": \"<integer>\",\n  \"tienda\": {\n    \"nombre\": \"<string>\",\n    \"codigo\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Solicitud incorrecta",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":idTrabajador"
+											],
+											"variable": [
+												{
+													"key": "idTrabajador"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": \"Código de tienda no válido\"\n}"
+								},
+								{
+									"name": "Error interno del servidor",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":idTrabajador"
+											],
+											"variable": [
+												{
+													"key": "idTrabajador"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"horasTotales\": \"<integer>\",\n  \"tienda\": {\n    \"nombre\": \"<string>\",\n    \"codigo\": \"<string>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Eliminar trabajador",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trabajadores",
+										":idTrabajador"
+									],
+									"variable": [
+										{
+											"key": "idTrabajador",
+											"value": "<long>",
+											"description": "(Required) ID del trabajador a eliminar"
+										}
+									]
+								},
+								"description": "Elimina un trabajador de la tienda."
+							},
+							"response": [
+								{
+									"name": "Trabajador eliminado correctamente",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":idTrabajador"
+											],
+											"variable": [
+												{
+													"key": "idTrabajador"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "<long>"
+								},
+								{
+									"name": "Solicitud incorrecta",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":idTrabajador"
+											],
+											"variable": [
+												{
+													"key": "idTrabajador"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": \"Código de tienda no válido\"\n}"
+								},
+								{
+									"name": "Error interno del servidor",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:idTrabajador",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":idTrabajador"
+											],
+											"variable": [
+												{
+													"key": "idTrabajador"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<long>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{codigoTienda}",
+					"item": [
+						{
+							"name": "Listar trabajadores por tienda",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/trabajadores/:codigoTienda",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trabajadores",
+										":codigoTienda"
+									],
+									"variable": [
+										{
+											"key": "codigoTienda",
+											"value": "<string>",
+											"description": "(Required) Código de la tienda para filtrar los trabajadores"
+										}
+									]
+								},
+								"description": "Obtiene la lista de trabajadores asociados a una tienda específica."
+							},
+							"response": [
+								{
+									"name": "Lista de trabajadores obtenida correctamente",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:codigoTienda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":codigoTienda"
+											],
+											"variable": [
+												{
+													"key": "codigoTienda"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"horasTotales\": \"<integer>\",\n  \"tienda\": {\n    \"nombre\": \"<string>\",\n    \"codigo\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Solicitud incorrecta",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:codigoTienda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":codigoTienda"
+											],
+											"variable": [
+												{
+													"key": "codigoTienda"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": \"Código de tienda no válido\"\n}"
+								},
+								{
+									"name": "Error interno del servidor",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trabajadores/:codigoTienda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trabajadores",
+												":codigoTienda"
+											],
+											"variable": [
+												{
+													"key": "codigoTienda"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nombre\": \"<string>\",\n    \"apellidos\": \"<string>\",\n    \"identificacion\": \"<string>\",\n    \"horasTotales\": \"<integer>\",\n    \"tienda\": {\n      \"nombre\": \"<string>\",\n      \"codigo\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"nombre\": \"<string>\",\n    \"apellidos\": \"<string>\",\n    \"identificacion\": \"<string>\",\n    \"horasTotales\": \"<integer>\",\n    \"tienda\": {\n      \"nombre\": \"<string>\",\n      \"codigo\": \"<string>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Crear trabajador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trabajadores",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trabajadores"
+							]
+						},
+						"description": "Crea un nuevo trabajador en una tienda."
+					},
+					"response": [
+						{
+							"name": "Trabajador creado correctamente",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/trabajadores",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trabajadores"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"horasTotales\": \"<integer>\",\n  \"tienda\": {\n    \"nombre\": \"<string>\",\n    \"codigo\": \"<string>\"\n  }\n}"
+						},
+						{
+							"name": "Solicitud incorrecta",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/trabajadores",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trabajadores"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"example\": \"Código de tienda no válido\"\n}"
+						},
+						{
+							"name": "Error interno del servidor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"codigoTienda\": \"<string>\",\n  \"horasTotales\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/trabajadores",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trabajadores"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nombre\": \"<string>\",\n  \"apellidos\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"horasTotales\": \"<integer>\",\n  \"tienda\": {\n    \"nombre\": \"<string>\",\n    \"codigo\": \"<string>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "asignaciones",
+			"item": [
+				{
+					"name": "desasignar",
+					"item": [
+						{
+							"name": "Desasigna un trabajador",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/asignaciones/desasignar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"asignaciones",
+										"desasignar"
+									]
+								},
+								"description": "Desasigna un trabajador de una sección específica"
+							},
+							"response": [
+								{
+									"name": "Desasignación realizada correctamente",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/asignaciones/desasignar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"asignaciones",
+												"desasignar"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<boolean>"
+								},
+								{
+									"name": "Solicitud incorrecta",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/asignaciones/desasignar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"asignaciones",
+												"desasignar"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": \"No existe una asignación para el trabajador en esta sección\"\n}"
+								},
+								{
+									"name": "Error interno del servidor",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/asignaciones/desasignar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"asignaciones",
+												"desasignar"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<boolean>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "asignar",
+					"item": [
+						{
+							"name": "Asigna un trabajador",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/asignaciones/asignar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"asignaciones",
+										"asignar"
+									]
+								},
+								"description": "Asigna un trabajador a una sección específica de una tienda."
+							},
+							"response": [
+								{
+									"name": "Asignación realizada correctamente",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/asignaciones/asignar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"asignaciones",
+												"asignar"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<boolean>"
+								},
+								{
+									"name": "Solicitud incorrecta",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/asignaciones/asignar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"asignaciones",
+												"asignar"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": \"La suma de horas asignadas supera las horas máximas permitidas para el trabajador: \"\n}"
+								},
+								{
+									"name": "Error interno del servidor",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"idTrabajador\": \"<long>\",\n  \"idSeccion\": \"<long>\",\n  \"horas\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/asignaciones/asignar",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"asignaciones",
+												"asignar"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<boolean>"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "authenticate",
+			"item": [
+				{
+					"name": "Autentica un usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/authenticate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						},
+						"description": "Permite autenticar un usuario y obtener un token de acceso"
+					},
+					"response": [
+						{
+							"name": "Autenticación exitosa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authenticate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Credenciales inválidas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/authenticate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "informes",
+			"item": [
+				{
+					"name": "secciones-libres-tienda",
+					"item": [
+						{
+							"name": "{codigoTienda}",
+							"item": [
+								{
+									"name": "Obtener informe de secciones incompletas de tienda",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/informes/secciones-libres-tienda/:codigoTienda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"informes",
+												"secciones-libres-tienda",
+												":codigoTienda"
+											],
+											"variable": [
+												{
+													"key": "codigoTienda",
+													"value": "<string>",
+													"description": "(Required) Código de la tienda"
+												}
+											]
+										},
+										"description": "Devuelve el informe de secciones de una tienda dado su código"
+									},
+									"response": [
+										{
+											"name": "Informe generado correctamente",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/informes/secciones-libres-tienda/:codigoTienda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"informes",
+														"secciones-libres-tienda",
+														":codigoTienda"
+													],
+													"variable": [
+														{
+															"key": "codigoTienda"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nombre\": \"<string>\",\n  \"direccion\": \"<string>\",\n  \"secciones\": [\n    {\n      \"nombre\": \"<string>\",\n      \"horasNecesarias\": \"<integer>\",\n      \"horasDisponibles\": \"<integer>\",\n      \"horasAsignadas\": \"<integer>\"\n    },\n    {\n      \"nombre\": \"<string>\",\n      \"horasNecesarias\": \"<integer>\",\n      \"horasDisponibles\": \"<integer>\",\n      \"horasAsignadas\": \"<integer>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Solicitud incorrecta",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/informes/secciones-libres-tienda/:codigoTienda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"informes",
+														"secciones-libres-tienda",
+														":codigoTienda"
+													],
+													"variable": [
+														{
+															"key": "codigoTienda"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": \"Código de tienda no válido\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "estado-tienda",
+					"item": [
+						{
+							"name": "{codigoTienda}",
+							"item": [
+								{
+									"name": "Obtener informe de estado de tienda",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/informes/estado-tienda/:codigoTienda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"informes",
+												"estado-tienda",
+												":codigoTienda"
+											],
+											"variable": [
+												{
+													"key": "codigoTienda",
+													"value": "<string>",
+													"description": "(Required) Código de la tienda"
+												}
+											]
+										},
+										"description": "Devuelve el informe de estado de una tienda dado su código"
+									},
+									"response": [
+										{
+											"name": "Informe generado correctamente",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/informes/estado-tienda/:codigoTienda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"informes",
+														"estado-tienda",
+														":codigoTienda"
+													],
+													"variable": [
+														{
+															"key": "codigoTienda"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nombre\": \"<string>\",\n  \"direccion\": \"<string>\",\n  \"secciones\": [\n    {\n      \"nombre\": \"<string>\",\n      \"trabajadores\": [\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        },\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"nombre\": \"<string>\",\n      \"trabajadores\": [\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        },\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        }\n      ]\n    }\n  ]\n}"
+										},
+										{
+											"name": "Solicitud incorrecta",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/informes/estado-tienda/:codigoTienda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"informes",
+														"estado-tienda",
+														":codigoTienda"
+													],
+													"variable": [
+														{
+															"key": "codigoTienda"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": \"Código de tienda no válido\"\n}"
+										},
+										{
+											"name": "Error interno del servidor",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/informes/estado-tienda/:codigoTienda",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"informes",
+														"estado-tienda",
+														":codigoTienda"
+													],
+													"variable": [
+														{
+															"key": "codigoTienda"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nombre\": \"<string>\",\n  \"direccion\": \"<string>\",\n  \"secciones\": [\n    {\n      \"nombre\": \"<string>\",\n      \"trabajadores\": [\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        },\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"nombre\": \"<string>\",\n      \"trabajadores\": [\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        },\n        {\n          \"nombre\": \"<string>\",\n          \"apellidos\": \"<string>\",\n          \"identificacion\": \"<string>\",\n          \"horasAsignadas\": \"<integer>\"\n        }\n      ]\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081"
+		}
+	]
+}

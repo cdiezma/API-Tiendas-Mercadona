@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: tienda_postgres
+    environment:
+      POSTGRES_DB: tienda_db
+      POSTGRES_USER: tienda_user
+      POSTGRES_PASSWORD: tienda_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db-scripts:/var/lib/postgresql/data
+    networks:
+      - tienda_net
+  api:
+    build: .
+    container_name: tienda_api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tienda_db
+      SPRING_DATASOURCE_USERNAME: tienda_user
+      SPRING_DATASOURCE_PASSWORD: tienda_pass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      EXTERNAL_STORES_API_URL: http://external-stores-api:8080
+      AUTH_USERNAME: store_admin
+      AUTH_PASSWORD: $2a$10$faD9bhQrEOtMRcEI5A7tjurvx4KjYVWvZgY6dGzXvzVCO0OuwM6Py
+      JWT_SECRET: jAPQl4GV08Erp8D0fZu/eIHhVuHugaqmMalCIQa8/+3q5jv30Ipa7V2nZL4p5kNg
+      JWT_EXPIRATION: 3600000
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+    networks:
+      - tienda_net
+  external-stores-api:
+    image: jameral/stores:latest
+    platform: linux/arm64/v8
+    ports:
+      - "8080:8080"
+    networks:
+      - tienda_net
+
+volumes:
+  db-scripts:
+
+networks:
+  tienda_net:
